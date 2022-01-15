@@ -7,6 +7,8 @@ import AdminRoute from './auth/AdminRoute';
 import Home from './core/Home';
 import Dashboard from './user/UserDashboard';
 import AdminDashboard from './user/AdminDashboard';
+import AddCategory from './admin/AddCategory';
+import AddProduct from './admin/AddProduct';
 const Router = () =>{
   return(
     <BrowserRouter>
@@ -17,6 +19,12 @@ const Router = () =>{
            </Route>
            <Route exact path='/admin/dashboard' element={<AdminRoute/>}>
              <Route exact path='/admin/dashboard' element={<AdminDashboard/>}/>
+           </Route>
+           <Route exact path='/create/category' element={<AdminRoute/>}>
+           <Route exact path='/create/category' element={<AddCategory/>}/>
+           </Route>
+           <Route exact path='/create/product' element={<AdminRoute/>}>
+           <Route exact path='/create/product' element={<AddProduct/>}/>
            </Route>
            <Route path="/" exact element={<Home/>}/>
              <Route path="/Signin" exact element={<Signin/>}/>

@@ -73,6 +73,9 @@ const Signin = ()=>{
        return <Navigate  to="/user/dashboard" />
      }
    }
+   if(isAuth()){
+    return <Navigate  to="/" />
+   }
   }
 return(
 <div>

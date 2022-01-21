@@ -9,6 +9,9 @@ const Menu = () =>{
      <li className="nav-item">
        <NavLink  className="nav-link" style={isActive => ({color: isActive ? "black" : "ffffff"})} to="/">Home</NavLink >
      </li>
+     <li className="nav-item">
+       <NavLink  className="nav-link" style={isActive => ({color: isActive ? "black" : "ffffff"})} to="/shop">Shop</NavLink >
+     </li>
      {isAuth() && isAuth().user.role === 0 && (
 
        <li className="nav-item">

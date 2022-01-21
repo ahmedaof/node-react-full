@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const { userById } = require("../controllers/userController");
 const {create,productById,showProduct,remove,update,
-  showAllProduct,relatedProduct,showAllCategory,listBySearch,photo} = require("../controllers/productController");
+  showAllProduct,relatedProduct,showAllCategory,listBySearch,photo,listSearch} = require("../controllers/productController");
 const {requireSignin,isAuth,isAdmin} = require("../controllers/authController");
 
 
@@ -12,6 +12,7 @@ router.get("/product/:productId" , showProduct);
 router.delete('/product/:productId/:userId' ,requireSignin,isAuth,isAdmin, remove )
 router.put('/product/:productId/:userId' ,requireSignin,isAuth,isAdmin, update )
 router.get("/products" , showAllProduct);
+router.get("/products/search", listSearch);
 router.get("/products/related/:productId" , relatedProduct);
 router.get("/products/categories" , showAllCategory);
 router.post("/products/by/search", listBySearch);

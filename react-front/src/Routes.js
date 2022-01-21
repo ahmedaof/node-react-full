@@ -9,6 +9,9 @@ import Dashboard from './user/UserDashboard';
 import AdminDashboard from './user/AdminDashboard';
 import AddCategory from './admin/AddCategory';
 import AddProduct from './admin/AddProduct';
+import Shop from './core/Shop';
+
+
 const Router = () =>{
   return(
     <BrowserRouter>
@@ -27,8 +30,10 @@ const Router = () =>{
            <Route exact path='/create/product' element={<AddProduct/>}/>
            </Route>
            <Route path="/" exact element={<Home/>}/>
-             <Route path="/Signin" exact element={<Signin/>}/>
-             <Route path="/Signup" exact element={<Signup/>}/>
+           <Route path="/shop" exact element={<Shop/>}/>
+             <Route path="/signin" exact element={<Signin/>}/>
+             <Route path="/signup" exact element={<Signup/>}/>
+
          </Routes >
    </Fragment>
     </BrowserRouter>

@@ -3,11 +3,13 @@ import Menu from './Menu'
 import "../style.css"
 const Layout = ({title = "Title" , description ="Description",childern,className}) => {
   return(
-  <div>
+  <div className='jumbotron'>
   <Menu />
-      <div className='container logo col-md-10 offset-md-5 justify-content-center'>
+      <div className='container logo col-md-10 mb-3'>
+         <br />
+         <br />
          <h2>{title}</h2>
-         <p className="col-md-2 justify-content-center">{description}</p>
+         <p>{description}</p>
       </div>
       <div className = {className}>
          {childern}

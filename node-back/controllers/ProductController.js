@@ -126,7 +126,7 @@ exports.showAllProduct = (req, res) => {
 }
 
 
-exports.relatedProduct = () => {
+exports.relatedProduct = (req,res) => {
   let limit = req.query.limit ? parseInt(req.query.limit) : 6;
 
   Product.find({ _id: { $ne: req.product }, category: req.product.category })

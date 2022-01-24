@@ -46,3 +46,11 @@ export const getCategories=()=>{
           return res.json();
         }).catch(err=>console.log(err))
       }
+
+      export const readProduct=(productId)=>{
+        return fetch(`${API}/product/${productId}`,{
+          method:"GET"
+        }).then(res=>{
+          return res.json();
+        }).catch(err=>console.log(err))
+      }

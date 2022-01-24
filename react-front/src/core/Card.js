@@ -11,9 +11,10 @@ const Card =  ({product})=>{
         <div className="card-header">{product.name}
          <div className="card-body">
            <ShowImage item={product} url="product" />
-         <p>{product.description}</p>
-         <p>{product.price}</p>
-         <Link to="/"><button className="btn btn-outline-primary mt-2 mb-2">
+         <p className='lead mt-2'>{product.description}</p>
+         <p className='black-9'>{product.price}</p>
+
+         <Link to={`/product/${product._id}`}><button className="btn btn-outline-primary mt-2 mb-2">
          ViewProduct
          </button></Link>
          <button className="btn btn-outline-warning mt-2 mb-2">

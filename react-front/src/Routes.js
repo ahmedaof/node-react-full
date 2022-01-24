@@ -10,6 +10,7 @@ import AdminDashboard from './user/AdminDashboard';
 import AddCategory from './admin/AddCategory';
 import AddProduct from './admin/AddProduct';
 import Shop from './core/Shop';
+import Product from './core/Product';
 
 
 const Router = () =>{
@@ -33,6 +34,7 @@ const Router = () =>{
            <Route path="/shop" exact element={<Shop/>}/>
              <Route path="/signin" exact element={<Signin/>}/>
              <Route path="/signup" exact element={<Signup/>}/>
+             <Route path="/product/:productId" exact element={<Product/>}/>
 
          </Routes >
    </Fragment>

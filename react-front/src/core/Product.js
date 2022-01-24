@@ -55,6 +55,7 @@ const Product = props => {
                                             (<span className='badge badge-primary badge-pill'>In stock</span>) : (<span className='badge badge-primary badge-pill'>Out stock</span>)
 
                                         }
+                                        <br />
                                         <button className="btn btn-outline-warning mt-2 mb-2">
                                             add to card
                                         </button>

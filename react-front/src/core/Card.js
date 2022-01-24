@@ -1,8 +1,13 @@
 import React from 'react' ;
 import {Link} from 'react-router-dom';
 import ShowImage from './ShowImage'
+import { addItem } from './cartHelpers';
 
-
+const addToCart = () =>{
+   addItem(product,()=>{
+     
+   })
+}
 
 const Card =  ({product})=>{
   return (
@@ -17,7 +22,7 @@ const Card =  ({product})=>{
          <Link to={`/product/${product._id}`}><button className="btn btn-outline-primary mt-2 mb-2">
          ViewProduct
          </button></Link>
-         <button className="btn btn-outline-warning mt-2 mb-2">
+         <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2">
          add to card
          </button>
          </div>

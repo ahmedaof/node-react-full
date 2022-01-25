@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react' ;
 import {signout,isAuth} from '../auth/Api' ;
 import {NavLink,Navigate } from 'react-router-dom';
+import { itemTotal } from './cartHelpers';
 const Menu = () =>{
 
   return(
@@ -11,6 +12,10 @@ const Menu = () =>{
      </li>
      <li className="nav-item">
        <NavLink  className="nav-link" style={isActive => ({color: isActive ? "black" : "ffffff"})} to="/shop">Shop</NavLink >
+     </li>
+     <li className="nav-item">
+       <NavLink  className="nav-link" style={isActive => ({color: isActive ? "black" : "ffffff"})} to="/cart">
+         Cart <sup><small className='cart-badge'>{itemTotal()}</small></sup></NavLink >
      </li>
      {isAuth() && isAuth().user.role === 0 && (
 

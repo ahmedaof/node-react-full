@@ -4,8 +4,22 @@ import moment from 'moment'
 import { listRelated, readProduct } from './apiCore'
 import ShowImage from './ShowImage'
 import Card from './Card'
-import { useParams, Link } from "react-router-dom";
+import { addItem } from './cartHelpers';
+import { useParams, Link, Navigate } from "react-router-dom";
 const Product = props => {
+    const [redirect , setRedirect] = useState(false)
+    const addToCart = () =>{
+       addItem(product,()=>{
+         setRedirect(true);
+       })
+    }
+
+    const shouldRedirect = redirect => {
+        if(redirect){
+          return <Navigate to='/cart'/>
+        }
+      }
+
     const id = useParams().productId;
     const [product, setProduct] = useState({})
     const [relatedProduct, setRelatedProduct] = useState([])
@@ -46,6 +60,7 @@ const Product = props => {
                             <div className="card">
                                 <div className="card-header name">{product.name}
                                     <div className="card-body">
+                                    {shouldRedirect(redirect)}
                                         <ShowImage item={product} url="product" />
                                         <p className='lead mt-2'>{product.description}</p>
                                         <p className='black-10'>{product.price}</p>
